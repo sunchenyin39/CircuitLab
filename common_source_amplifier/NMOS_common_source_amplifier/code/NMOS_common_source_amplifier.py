@@ -62,13 +62,17 @@ def main():
              v1_amplitude_dc).tolist()[int((t_start_ac+t_raise)/2/t_interval):]
     v2_ac = (np.array(v2)-v2[int((t_start_ac+t_raise)/2/t_interval)]
              ).tolist()[int((t_start_ac+t_raise)/2/t_interval):]
-    plt.plot(t,v1_ac,label='Vin')
-    plt.plot(t,v2_ac,label='Vout')
+    plt.plot(t, v1_ac, label='Vin')
+    plt.plot(t, v2_ac, label='Vout')
     plt.title("NMOS_common_source_amplifier")
     plt.ylabel("Voltage(V)")
     plt.xlabel("t(s)")
-    plt.legend(loc = 'upper right')
+    plt.legend(loc='upper right')
     plt.show()
+
+    print(np.max(v1_ac))
+    print(np.max(v2_ac))
+    print(np.max(v2_ac)/np.max(v1_ac))  # theoretically this number should be 5.
 
 
 def voltage_generator_dc(t_raise, t_max, t_interval, v_amplitude, init_zero_num):
