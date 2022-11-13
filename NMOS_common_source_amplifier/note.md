@@ -44,16 +44,50 @@ $$
 0 & 1 & 0 & 0
 \end{bmatrix}
 \begin{bmatrix}
-V_{2n}\\
-I_{1n}\\
-I_{2n}\\
-I_{3n}\\
+V_{2_n}\\
+I_{1_n}\\
+I_{2_n}\\
+I_{3_n}\\
 \end{bmatrix}
 =
 \begin{bmatrix}
 0\\
 0\\
-I_{2n}\\
-I_{3n}\\
+V_{3s_n}\\
+I_{n-1}\\
 \end{bmatrix}
 $$
+其中：
+$$
+I_{n-1}=\begin{equation}  
+\left\{  
+             \begin{array}{lr}  
+             0,&V_{1_n}<V_{th}\\
+			 \mu_{n}C_{ox}\frac{W}{L}((V_{1_n}-V_{th})V_{2_n}-\frac{1}{2}V_{2_n}^{2}),&V_{1_n}>V_{th}\text{ and }V_{2_n}<V_{1_n}-V_{th}\\
+			 \frac{1}{2}\mu_{n}C_{ox}\frac{W}{L}(V_{1_n}-V_{th})^{2},&V_{1_n}>V_{th}\text{ and }V_{2_n}\geq V_{1_n}-V_{th}
+             \end{array}  
+\right.
+\end{equation}
+$$
+
+## 3.仿真结果和小信号放大结果
+
+<div>
+	<center>
+	<img src="result/simulation_result.PNG"
+        alt="图片无法显示"
+		style="zoom:60%"/>
+	<br>
+	图2：NMOS共源放大器仿真结果
+	</center>
+</div>
+
+<div>
+	<center>
+	<img src="result/amplified_result.png"
+        alt="图片无法显示"
+		style="zoom:60%"/>
+	<br>
+	图3：NMOS共源放大器小信号放大结果
+	</center>
+</div>
